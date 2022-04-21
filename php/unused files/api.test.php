@@ -1,4 +1,10 @@
 <?php
+
+	// all temperatures found in a range of dates are left in an array
+/* 	foreach($data as $object) {
+        $arrayData['magnitude'][] = $object->magnitude;
+	}
+ */
 	//Print all objects fetched by the API
 /* 	foreach($data as $object) {
 		echo 'Id: '.$object->id.'<br>';
