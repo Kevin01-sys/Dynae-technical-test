@@ -122,4 +122,44 @@
         echo gettype($intvl).' <br>';
         echo $intvl->y . " year, " . $intvl->m." months and ".$intvl->d." minutes".$intvl->i." ".$intvl->s." seconds"; */
     /* end: working with dates */
+
+	/* start: We search for all the objects brought by the API */
+
+	/* foreach($data as $object) {
+        $magnitude=$object->magnitude;
+        $timestamp=$object->timestamp;
+        $arrayData['magnitude'][] = $magnitude; */
+
+        /* start: The number of seconds that have elapsed "from" to the "date in the object" is calculated. */
+            /* $segtimestamp=strtotime($timestamp); // in seconds the date stored in the object
+            $finalSegundos=$segtimestamp-$dateFrom; // "object date" minus "date from"
+            $arrayData['date']['range'][] = $finalSegundos; //store in the Array to be handled later
+            $arrayData['date']['timestamp'][] = $timestamp; //store in the Array to be handled later */
+        /* end: The number of seconds that have elapsed "from" to the "date in the object" is calculated. */
+	/* } */
+    /* end: We search for all the objects brought by the API */
+
+    /* start:  calculating range of seconds between dates */
+        // Array starts at position 1, because it will always subtract the next position versus the previous one
+/*         for ($i=1; $i < count($arrayData['date']['range']); $i++) {
+            $previousRange=$arrayData['date']['range'][$i-1];
+            $followingRange=$arrayData['date']['range'][$i];
+
+            $previousTimestamp=$arrayData['date']['timestamp'][$i-1];
+            $followingTimestamp=$arrayData['date']['timestamp'][$i];
+
+            $previousMagnitude=$arrayData['magnitude'][$i-1];
+
+            $secondsBetweenDate = abs($previousRange-$followingRange);
+            // if the temperature of that day is higher than the one given by the user
+            if ($previousMagnitude>$tempUser){
+                //echo 'Segundos en que la temperatura era más alta que la ingresada por el usuario: '.$secondsBetweenDate. '<br>';
+                echo 'Entre: '.$previousTimestamp.' to: '.$followingTimestamp.': la temperatura '.$previousMagnitude.' era más ALTA que la ingresada por el usuario. Fueron '.$secondsBetweenDate. ' segundos<br>';
+                $sumSecondTemp += $secondsBetweenDate;
+            } else{
+                echo 'Entre: '.$previousTimestamp.' to: '.$followingTimestamp.': la temperatura '.$previousMagnitude.' era más BAJA que la ingresada por el usuario. Fueron '.$secondsBetweenDate. ' segundos<br>';
+                //echo 'Segundos en que la temperatura era baja que la ingresada por el usuario: '.$secondsBetweenDate. '<br>';
+            }
+        } */
+    /* end:  calculating range of seconds between dates */
 ?>
