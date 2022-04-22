@@ -1,17 +1,5 @@
 
 <?php
-/* variables created to filter dates */
-$from="2022-04-20T13:21:10";
-$to="2022-04-20T13:23:23";
-
-$dateFrom=strtotime($from);
-$dateTo=strtotime($to);
-$betweenDates=$dateTo-$dateFrom;
-
-//echo strtotime("now").'<br>';
-echo 'La diferencia en segundos desde '.$from.' hasta '.$to.' es : '.$betweenDates.' Segundos <br>';
-//echo $betweenDates;
-
 /* API name */
 /* $api_url="https://jsonplaceholder.typicode.com/users"; */
 $apiUrl = "http://data-env.eba-pwemrg4q.us-east-1.elasticbeanstalk.com";

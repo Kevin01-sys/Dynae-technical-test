@@ -1,4 +1,6 @@
 <?php
+    //$test=0;
+
 	// all temperatures found in a range of dates are left in an array
 	/* foreach($data as $object) {
         $magnitude=$object->magnitude;
@@ -110,4 +112,14 @@
         //echo array_sum($arrayData['over']['date']); */
 
     /* end: obtain max and min temperatures */
+
+    /* start: working with dates */
+        //$firstDate  = new DateTime("2019-01-01");
+        //$secondDate = new DateTime("2020-03-04");
+        /* $firstDate  = new DateTime("2022-04-20 13:21:10");
+        $secondDate = new DateTime("2022-04-20 13:23:23");
+        $intvl = $firstDate->diff($secondDate);
+        echo gettype($intvl).' <br>';
+        echo $intvl->y . " year, " . $intvl->m." months and ".$intvl->d." minutes".$intvl->i." ".$intvl->s." seconds"; */
+    /* end: working with dates */
 ?>
