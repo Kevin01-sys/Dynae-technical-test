@@ -7,9 +7,10 @@
     //echo $hourTo.' <br>';
     $to=$dateTo.'T'.$hourTo;
     $tempUser=$temp;
-    echo $from. ' <br>';
-    echo $tempUser. ' <br>';
-    echo $to. ' <br>';
+    //echo $from. ' <br>';
+    //echo $tempUser. ' <br>';
+    //echo $to. ' <br>';
+
     // Data to be entered by the user
     //$from="2022-04-20T13:21:10";
     //$to="2022-04-20T13:25:16";
@@ -41,15 +42,21 @@
     $sumSecondTemp = $objectApi->calculeTemp($arrayData,$tempUser);
 
     //start: obtain max and min temperatures
-    $maxMagnitude = max($arrayData['magnitude']);
-    $minMagnitude = min($arrayData['magnitude']);
+    if ($arrayData){
+        $maxMagnitude = max($arrayData['magnitude']);
+        $minMagnitude = min($arrayData['magnitude']);
+    } else {
+        $maxMagnitude = 0;
+        $minMagnitude = 0;
+    }
+
 
 
     /* start: Print messages on the screen for the user */
         echo "La temperatura ingresada por el usuario es: ".$tempUser." <br>";
         echo 'La diferencia en segundos desde '.$from.' hasta '.$to.' es : '.$betweenDates.' Segundos <br>';
-        echo 'Temperatura máxima desde '.$from.' hasta '.$to.' : '.$maxMagnitude.'<br>';
         echo 'Temperatura mínima desde '.$from.' hasta '.$to.' : '.$minMagnitude.'<br>';
+        echo 'Temperatura máxima desde '.$from.' hasta '.$to.' : '.$maxMagnitude.'<br>';
         echo $sumSecondTemp." segs: la cantidad de segundos que en ese rango de fechas la temperatura estuvo por sobre la temperatura objetivo indicada por el usuario. <br>";
     /* end: Print messages on the screen for the user */
 

@@ -15,24 +15,25 @@
     <h1>Dynae - Problema API</h1>
     <div id="test"></div><br>
 
-    <form name="formulario" method="post" action="../controllers/apiTest.php">
+    <form name="formDates" id="formDates" method="post" action="../controllers/apiTest.php">
         <!-- Campo de entrada de fecha -->
         Selecciona la fecha DESDE:
-        <input type="date" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31"/>
+        <input type="date" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31" required="required"/>
         <!-- Campo de entrada de hora -->
         Selecciona la hora deseada:
-        <input type="time" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1">
+        <input type="time" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1" required="required">
         <br><br>
         <!-- Campo de entrada de fecha -->
         Selecciona la fecha HASTA:
-        <input type="date" id="dateTo " name="dateTo" min="2022-01-01" max="2023-12-31"/>
+        <input type="date" id="dateTo" name="dateTo" min="2022-01-01" max="2023-12-31" required="required"/>
         <!-- Campo de entrada de hora -->
         Selecciona la hora deseada:
-        <input type="time" id="hourTo" name="hourTo" list="listalimitestiempo" step="1">
+        <input type="time" id="hourTo" name="hourTo" list="listalimitestiempo" step="1" required="required">
         <br><br>
         <!-- Campo de entrada de fecha -->
         Temperatura °C:
-        <input type="text" id="temp" name="temp" min="2022-01-01" max="2023-12-31"/>
+        <!-- <input type="number" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/> -->
+        <input type="text" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/>
         <br><br>
         <input type="submit" value="Enviar">
     </form>

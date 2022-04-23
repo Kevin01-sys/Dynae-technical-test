@@ -32,26 +32,31 @@ class ObjectApi {
     }
 
     public function calculeTemp($arrayData,$tempUser){
-        for ($i=1; $i < count($arrayData['date']['range']); $i++) {
-            $previousRange=$arrayData['date']['range'][$i-1];
-            $followingRange=$arrayData['date']['range'][$i];
+        if ($arrayData){
+            for ($i=1; $i < count($arrayData['date']['range']); $i++) {
+                $previousRange=$arrayData['date']['range'][$i-1];
+                $followingRange=$arrayData['date']['range'][$i];
 
-            $previousTimestamp=$arrayData['date']['timestamp'][$i-1];
-            $followingTimestamp=$arrayData['date']['timestamp'][$i];
+                $previousTimestamp=$arrayData['date']['timestamp'][$i-1];
+                $followingTimestamp=$arrayData['date']['timestamp'][$i];
 
-            $previousMagnitude=$arrayData['magnitude'][$i-1];
+                $previousMagnitude=$arrayData['magnitude'][$i-1];
 
-            $secondsBetweenDate = abs($previousRange-$followingRange);
-            // if the temperature of that day is higher than the one given by the user
-            if ($previousMagnitude>$tempUser){
-                //echo 'Segundos en que la temperatura era más alta que la ingresada por el usuario: '.$secondsBetweenDate. '<br>';
-                echo 'Entre: '.$previousTimestamp.' to: '.$followingTimestamp.': la temperatura '.$previousMagnitude.' era más ALTA que la ingresada por el usuario. Fueron '.$secondsBetweenDate. ' segundos<br>';
-                $this->sumSecondTemp += $secondsBetweenDate;
-            } else{
-                echo 'Entre: '.$previousTimestamp.' to: '.$followingTimestamp.': la temperatura '.$previousMagnitude.' era más BAJA que la ingresada por el usuario. Fueron '.$secondsBetweenDate. ' segundos<br>';
-                //echo 'Segundos en que la temperatura era baja que la ingresada por el usuario: '.$secondsBetweenDate. '<br>';
+                $secondsBetweenDate = abs($previousRange-$followingRange);
+                // if the temperature of that day is higher than the one given by the user
+                if ($previousMagnitude>$tempUser){
+                    //echo 'Segundos en que la temperatura era más alta que la ingresada por el usuario: '.$secondsBetweenDate. '<br>';
+                    echo 'Entre: '.$previousTimestamp.' to: '.$followingTimestamp.': la temperatura '.$previousMagnitude.' era más ALTA que la ingresada por el usuario. Fueron '.$secondsBetweenDate. ' segundos <br>';
+                    $this->sumSecondTemp += $secondsBetweenDate;
+                } else{
+                    echo 'Entre: '.$previousTimestamp.' to: '.$followingTimestamp.': la temperatura '.$previousMagnitude.' era más BAJA que la ingresada por el usuario. Fueron '.$secondsBetweenDate. ' segundos <br>';
+                    //echo 'Segundos en que la temperatura era baja que la ingresada por el usuario: '.$secondsBetweenDate. '<br>';
+                }
             }
+        } else {
+            echo "No se registro eventos durante estas fechas <br>";
         }
+
         return $this->sumSecondTemp;
     }
 }
