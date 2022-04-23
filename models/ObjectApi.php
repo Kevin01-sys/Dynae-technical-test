@@ -14,6 +14,7 @@ class ObjectApi {
         $this->sumSecondTemp=0;
 	}
 
+    //data is passed to an Array for later manipulation
     public function prepareTheData($objects, $startingDate){
         $this->arrayObject = [];
         foreach($objects as $object) {
@@ -31,6 +32,7 @@ class ObjectApi {
         return $this->arrayObject;
     }
 
+    // calculates at what time the temperature was higher than the one delivered by the user
     public function calculeTemp($arrayData,$tempUser){
         if ($arrayData){
             for ($i=1; $i < count($arrayData['date']['range']); $i++) {

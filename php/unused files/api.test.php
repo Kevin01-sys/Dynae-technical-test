@@ -1,4 +1,14 @@
 <?php
+    // User-supplied data
+    //echo $dateFrom.' <br>';
+    //echo $hourFrom.' <br>';
+    //echo $dateTo.' <br>';
+    //echo $hourTo.' <br>';
+
+    //echo $from. ' <br>';
+    //echo $tempUser. ' <br>';
+    //echo $to. ' <br>';
+
     //$test=0;
 
 	// all temperatures found in a range of dates are left in an array

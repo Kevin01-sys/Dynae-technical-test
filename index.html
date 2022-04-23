@@ -12,31 +12,58 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-html5-2.2.2/datatables.min.css"/>
 </head>
 <body>
-    <h1>Dynae - Problema API</h1>
     <div id="test"></div><br>
 
-    <form name="formDates" id="formDates" method="post" action="../controllers/apiTest.php">
-        <!-- Campo de entrada de fecha -->
+    <div class="container">
+        <h2>Dynae - Problema API</h2>
+        <form name="formDates" id="formDates" method="post" action="../controllers/apiTest.php">
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-sm-12">
+                    <label for="pwd">Selecciona la fecha DESDE:</label>
+                    <input type="date" class="form-control" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31" required="required"/>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label for="pwd">Selecciona la hora DESDE:</label>
+                    <input type="time" class="form-control" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1" required="required">
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-sm-12">
+                    <label for="pwd">Selecciona la fecha HASTA:</label>
+                    <input type="date" class="form-control" id="dateTo" name="dateTo" min="2022-01-01" max="2023-12-31" required="required"/>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label for="pwd">Selecciona la hora HASTA:</label>
+                    <input type="time" class="form-control" id="hourTo" name="hourTo" list="listalimitestiempo" step="1" required="required">
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-sm-12 ">
+                    <label for="pwd">Temperatura °C:</label>
+                    <input type="text" class="form-control" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/>
+                    Recuerda llenar todos los datos del formulario
+                    <input type="submit" class="btn btn-default" value="Enviar">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- <form name="formDates" id="formDates" method="post" action="../controllers/apiTest.php">
         Selecciona la fecha DESDE:
         <input type="date" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31" required="required"/>
-        <!-- Campo de entrada de hora -->
         Selecciona la hora deseada:
         <input type="time" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1" required="required">
         <br><br>
-        <!-- Campo de entrada de fecha -->
         Selecciona la fecha HASTA:
         <input type="date" id="dateTo" name="dateTo" min="2022-01-01" max="2023-12-31" required="required"/>
-        <!-- Campo de entrada de hora -->
         Selecciona la hora deseada:
         <input type="time" id="hourTo" name="hourTo" list="listalimitestiempo" step="1" required="required">
         <br><br>
-        <!-- Campo de entrada de fecha -->
         Temperatura °C:
-        <!-- <input type="number" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/> -->
         <input type="text" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/>
         <br><br>
         <input type="submit" value="Enviar">
-    </form>
+    </form> -->
 
     <br>
     <!-- <div>
@@ -45,7 +72,7 @@
     <!-- Jquery library -->
     <script src="js/jquery/jquery-3.5.1.js"></script>
     <!-- file on which JavaScript tests will be performed -->
-    <script src="js/ajax.test.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
 
 </body>
 </html>

@@ -1,20 +1,14 @@
 <?php
     extract($_POST, EXTR_OVERWRITE);
-    //echo $dateFrom.' <br>';
-    //echo $hourFrom.' <br>';
-    $from=$dateFrom.'T'.$hourFrom;
-    //echo $dateTo.' <br>';
-    //echo $hourTo.' <br>';
-    $to=$dateTo.'T'.$hourTo;
-    $tempUser=$temp;
-    //echo $from. ' <br>';
-    //echo $tempUser. ' <br>';
-    //echo $to. ' <br>';
-
-    // Data to be entered by the user
+    // static data used as an example
     //$from="2022-04-20T13:21:10";
     //$to="2022-04-20T13:25:16";
     //$tempUser=10.83341; // user-specified temperature
+
+    // User-supplied data
+    $from=$dateFrom.'T'.$hourFrom;
+    $to=$dateTo.'T'.$hourTo;
+    $tempUser=$temp;
 
 	require_once "../api/endPoints.php";
 	require_once "../models/ObjectApi.php";
@@ -60,7 +54,7 @@
         echo $sumSecondTemp." segs: la cantidad de segundos que en ese rango de fechas la temperatura estuvo por sobre la temperatura objetivo indicada por el usuario. <br>";
     /* end: Print messages on the screen for the user */
 
-    //var_dump($arrayData).'<br>';
+    var_dump($arrayData).'<br>';
 
     /* echo json_encode($data); */
 ?>
