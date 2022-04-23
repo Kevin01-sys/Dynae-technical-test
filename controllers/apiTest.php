@@ -33,7 +33,7 @@
     $arrayData = $objectApi->prepareTheData($data,$dateFrom);
 
     //start:  calculating range of seconds between dates
-    $sumSecondTemp = $objectApi->calculeTemp($arrayData,$tempUser);
+    $sumSecondTemp = $objectApi->calculeTemp($arrayData,$tempUser,$betweenDates,$to);
 
     //start: obtain max and min temperatures
     if ($arrayData){
@@ -54,7 +54,7 @@
         echo $sumSecondTemp." segs: la cantidad de segundos que en ese rango de fechas la temperatura estuvo por sobre la temperatura objetivo indicada por el usuario. <br>";
     /* end: Print messages on the screen for the user */
 
-    var_dump($arrayData).'<br>';
+    /* var_dump($arrayData).'<br>'; */
 
     /* echo json_encode($data); */
 ?>
