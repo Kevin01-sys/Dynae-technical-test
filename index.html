@@ -13,10 +13,34 @@
 </head>
 <body>
     <h1>Dynae - Problema API</h1>
-    <div id="test">Se harán distintas pruebas aquí</div>
-    <div>
+    <div id="test"></div><br>
+
+    <form name="formulario" method="post" action="../controllers/apiTest.php">
+        <!-- Campo de entrada de fecha -->
+        Selecciona la fecha DESDE:
+        <input type="date" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31"/>
+        <!-- Campo de entrada de hora -->
+        Selecciona la hora deseada:
+        <input type="time" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1">
+        <br><br>
+        <!-- Campo de entrada de fecha -->
+        Selecciona la fecha HASTA:
+        <input type="date" id="dateTo " name="dateTo" min="2022-01-01" max="2023-12-31"/>
+        <!-- Campo de entrada de hora -->
+        Selecciona la hora deseada:
+        <input type="time" id="hourTo" name="hourTo" list="listalimitestiempo" step="1">
+        <br><br>
+        <!-- Campo de entrada de fecha -->
+        Temperatura °C:
+        <input type="text" id="temp" name="temp" min="2022-01-01" max="2023-12-31"/>
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+    <!-- <div>
         <input id="btn_listar" type="button" class="btn btn-primary" value="Listar">
-    </div>
+    </div> -->
     <!-- Jquery library -->
     <script src="js/jquery/jquery-3.5.1.js"></script>
     <!-- file on which JavaScript tests will be performed -->

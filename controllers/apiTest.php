@@ -1,8 +1,19 @@
 <?php
+    extract($_POST, EXTR_OVERWRITE);
+    //echo $dateFrom.' <br>';
+    //echo $hourFrom.' <br>';
+    $from=$dateFrom.'T'.$hourFrom;
+    //echo $dateTo.' <br>';
+    //echo $hourTo.' <br>';
+    $to=$dateTo.'T'.$hourTo;
+    $tempUser=$temp;
+    echo $from. ' <br>';
+    echo $tempUser. ' <br>';
+    echo $to. ' <br>';
     // Data to be entered by the user
-    $from="2022-04-20T13:21:10";
-    $to="2022-04-20T13:25:16";
-    $tempUser=10.83341; // user-specified temperature
+    //$from="2022-04-20T13:21:10";
+    //$to="2022-04-20T13:25:16";
+    //$tempUser=10.83341; // user-specified temperature
 
 	require_once "../api/endPoints.php";
 	require_once "../models/ObjectApi.php";

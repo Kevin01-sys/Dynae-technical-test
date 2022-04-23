@@ -11,6 +11,7 @@ class ObjectApi {
 
 	public function __construct(){
 		$this->arrayObject = array();
+        $this->sumSecondTemp=0;
 	}
 
     public function prepareTheData($objects, $startingDate){
