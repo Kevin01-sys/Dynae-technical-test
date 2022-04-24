@@ -1,0 +1,68 @@
+Front End:
+    Recursos usados:
+    HTML (Lenguaje de Marcado de Hipertexto): Es el código que se utiliza para estructurar y desplegar una página web y sus contenidos.
+    JavaScript (Lenguaje de programación): Añadir funcionalidades interactivas y otros contenidos web dinámicos a las páginas web
+
+    Archivos usados:
+    index.html:
+    Función del archivo: Es la vista del programa, el usuario verá el formulario en el que ingresará fechas, y temperaturas.
+    Estos datos serán enviados al archivo apiTest.php
+
+    js/app.js:
+    Archivo usado por: "index.html".
+    Función del archivo: Validar los datos del formulario en "index.html".
+    Validaciones del archivo:
+        1: El usuario solo puede ingresar números enteros y decimales en la temperatura.
+        2: La fecha final no puede ser mayor a la fecha desde.
+        3: Al cumplirse la validación de las fechas, ahora valida que la hora final no puede ser mayor a la hora desde.
+
+Back End:
+    Recursos usados:
+    PHP (Lenguaje de programación): Es un lenguaje de desarrollo de aplicaciones webs y scripts, de código abierto y a nivel de servidor.
+
+    Archivos usados:
+    controllers/apiTest.php
+    Archivo usado por: "index.html".
+    Función del archivo:
+    Obtener los datos del "index.html", consume la API con la URL proporcionada por "endPoints.php",
+    y con la clase ObjectApi del archivo "ObjectApi.php" ejecuta la logica del proyecto
+    El usuario obtiene los siguiente por pantalla:
+        1: La temperatura ingresada por el usuario.
+        2: Diferencia o rango de tiempo en segundos entre las fechas "DESDE" y "HASTA" ingresada por el usuario.
+        3: Temperatura MÍNIMA registrada entre las entre las fechas "DESDE" y "HASTA" ingresada por el usuario.
+        4: Temperatura MÁXIMA registrada entre las entre las fechas "DESDE" y "HASTA" ingresada por el usuario.
+        5: La cantidad de segundos que en ese rango de fechas la temperatura estuvo por sobre la temperatura objetivo-indicada por el usuario.
+        6: Si el programa encuentra registros mostrara en pantalla:
+            -> La fecha entre cada registro.
+            -> La temperatura registrada entre ese tiempo.
+            -> Si la temperatura fue más "ALTA" o "BAJA" que la ingresada por el usuario.
+            -> La cantidad de segundos entre cada registro.
+        7: Si no encuentra ni un registro, el programa muestra en pantalla el siguiente mensaje "No se registro eventos durante estas fechas".
+
+    api/endPoints.php
+    Función del archivo: Se obtiene la dirección web (web service endpoint) para obtener datos de la API proporcionada por Dynae.
+    Archivo usado por: "apiTest.php".
+    Parámetros de envio: Se le entrega la fecha "from" and "to" para que el endpoint funcione.
+
+    models/ObjectApi.php
+    Función del archivo: Crea la clase ObjectApi, en la cual se manejarán todos los objetos que traemos de la API.
+    Archivo usado por: "apiTest.php".
+    Propiedades de la clase:
+        1: $arrayObject: Array en el que se manipularán los datos de la API
+        2: $sumSecondTemp: Suma de los segundos en los que la temperatura fue superior a la introducida por el usuario
+    Métodos de la clase:
+        1: prepareTheData():
+        Función principal del método: Recorre todos los objetos traídos por la API, se guardan en un Array los siguientes parámetros:
+        "magnitude", "timestamp", y el cálculo del rango en segundos de la fecha ingresada por el usuario (FROM) hasta cada timestamp.
+        Parámetros que se le pasan al método:
+            1 -> $objects: Colección de objetos traidos por API desde la fecha "Desde" y "Hasta".
+            2 -> $startingDate: Fecha "Desde".
+        2: calculeTemp():
+        Función principal del método: Calcular la cantidad de segundos que en ese rango de fechas (DESDE-HASTA) la temperatura estuvo por sobre la temperatura
+        objetivo indicado por el usuario.
+        Parámetros que se le pasan al método:
+            1 -> $arrayData: Array que contiene -> "magnitude", "timestamp", y el cálculo del rango en segundos de la fecha ingresada por el usuario (FROM) hasta cada timestamp.
+            2 -> $tempUser: Temperatura ingresada por el usuario.
+            3 -> $betweenDates: Calculo del rango en segundos de la fecha ingresada por el usuario (FROM) hasta la fecha ingresada por el usuario (HASTA).
+            4 -> $to: $startingDate: Fecha "HASTA".
+
