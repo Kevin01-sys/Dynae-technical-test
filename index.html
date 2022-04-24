@@ -8,71 +8,47 @@
 	<link rel="shortcut icon" href="#">
     <!-- External styles are defined for the project -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-html5-2.2.2/datatables.min.css"/>
 </head>
 <body>
-    <div id="test"></div><br>
-
     <div class="container">
         <h2>Dynae - Problema API</h2>
+        <!-- start: form used to send the data to the backend file -->
         <form name="formDates" id="formDates" method="post" action="../controllers/apiTest.php">
+            <!-- date and time FROM -->
             <div class="row justify-content-between">
                 <div class="col-md-6 col-sm-12">
-                    <label for="pwd">Selecciona la fecha DESDE:</label>
+                    <label for="dateFrom">Selecciona la fecha DESDE:</label>
                     <input type="date" class="form-control" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31" required="required"/>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <label for="pwd">Selecciona la hora DESDE:</label>
+                    <label for="hourFrom">Selecciona la hora DESDE:</label>
                     <input type="time" class="form-control" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1" required="required">
                 </div>
             </div>
+            <!-- date and time TO -->
             <div class="row justify-content-between">
                 <div class="col-md-6 col-sm-12">
-                    <label for="pwd">Selecciona la fecha HASTA:</label>
+                    <label for="dateTo">Selecciona la fecha HASTA:</label>
                     <input type="date" class="form-control" id="dateTo" name="dateTo" min="2022-01-01" max="2023-12-31" required="required"/>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <label for="pwd">Selecciona la hora HASTA:</label>
+                    <label for="hourTo">Selecciona la hora HASTA:</label>
                     <input type="time" class="form-control" id="hourTo" name="hourTo" list="listalimitestiempo" step="1" required="required">
                 </div>
             </div>
+            <!-- temperature -->
             <div class="row justify-content-between">
                 <div class="col-md-6 col-sm-12 ">
-                    <label for="pwd">Temperatura °C:</label>
-                    <input type="text" class="form-control" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/>
+                    <label for="temp">Temperatura °C:</label>
+                    <input type="text" class="form-control" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/>
                     Recuerda llenar todos los datos del formulario
                     <input type="submit" class="btn btn-default" value="Enviar">
                 </div>
             </div>
         </form>
+        <!-- start: form used to send the data to the backend file -->
     </div>
-
-    <!-- <form name="formDates" id="formDates" method="post" action="../controllers/apiTest.php">
-        Selecciona la fecha DESDE:
-        <input type="date" id="dateFrom" name="dateFrom" min="2022-01-01" max="2023-12-31" required="required"/>
-        Selecciona la hora deseada:
-        <input type="time" id="hourFrom" name="hourFrom" list="listalimitestiempo" step="1" required="required">
-        <br><br>
-        Selecciona la fecha HASTA:
-        <input type="date" id="dateTo" name="dateTo" min="2022-01-01" max="2023-12-31" required="required"/>
-        Selecciona la hora deseada:
-        <input type="time" id="hourTo" name="hourTo" list="listalimitestiempo" step="1" required="required">
-        <br><br>
-        Temperatura °C:
-        <input type="text" step="any" id="temp" name="temp" min="2022-01-01" max="2023-12-31" required="required"/>
-        <br><br>
-        <input type="submit" value="Enviar">
-    </form> -->
-
-    <br>
-    <!-- <div>
-        <input id="btn_listar" type="button" class="btn btn-primary" value="Listar">
-    </div> -->
-    <!-- Jquery library -->
-    <script src="js/jquery/jquery-3.5.1.js"></script>
     <!-- file on which JavaScript tests will be performed -->
     <script src="js/app.js" type="module"></script>
-
 </body>
 </html>

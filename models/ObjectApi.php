@@ -6,8 +6,8 @@
 
 class ObjectApi {
 
-    private $arrayObject;
-    private $sumSecondTemp;
+    private $arrayObject; // Array in which API data will be manipulated
+    private $sumSecondTemp; // sum of the seconds in which the temperature was higher than the one entered by the user
 
 	public function __construct(){
 		$this->arrayObject = array();
@@ -54,12 +54,12 @@ class ObjectApi {
                 for ($i=1; $i < count($arrayData['date']['range']); $i++) {
                     $previousRange=$arrayData['date']['range'][$i-1];
                     $followingRange=$arrayData['date']['range'][$i];
-    
+
                     $previousTimestamp=$arrayData['date']['timestamp'][$i-1];
                     $followingTimestamp=$arrayData['date']['timestamp'][$i];
-    
+
                     $previousMagnitude=$arrayData['magnitude'][$i-1];
-    
+
                     $secondsBetweenDate = abs($previousRange-$followingRange);
                     // if the temperature of that day is higher than the one given by the user
                     if ($previousMagnitude>$tempUser){
