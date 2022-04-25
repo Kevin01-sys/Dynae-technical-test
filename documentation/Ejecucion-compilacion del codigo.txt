@@ -1,0 +1,43 @@
+Todo el desarrollo de este proyecto fue realizado en Windows 10 en un localhost con puerto 80.
+
+Para el código funcione correctamente se debe instalar los siguientes recursos:
+-> PHP Version 8.1.3
+-> Apache/2.4.52
+
+Hay 2 maneras para instalar estos programas.
+1 - Instalación manual.
+2 - Instalación automatica con los servidores locales XAMPP y WAMP.
+    -> XAMPP (XAMPP es X de multiplataforma, Apache, MariaDB, PHP y Perl).
+    -> WAMPP (WAMP es Windows, Apache, Mysql y PHP).
+
+Recomiendo hacer uso de la instalación automatica, debido a que conecta las herramientas automaticamente,
+y es facil encender y apagar los servicios desde el mismo XAMPP O WAMPP.
+
+Instalar XAMPP:
+Este paso a paso para instalar XAMPP muestra la instalación del paquete en Windows. En el caso de usar Linux o Mac OS X, el proceso de instalación puede variar.
+    Paso 1: Descarga las versiones con PHP 7, 8 o superior se pueden descargar gratuitamente en https://www.apachefriends.org/es/download.html.
+    Paso 2: Ejecutar el archivo .exe.
+    Paso 3: Iniciar el asistente de instalación.
+    Paso 4: Selección de los componentes del software.
+        Para el funcionamiento de este programa se puede marcar solo Apache y PHP.
+    Paso 5: Selección del directorio para la instalación.
+        En este paso se escoge el directorio donde se instalará el paquete.
+        Si se ha escogido la configuración estándar se creará una carpeta con el nombre XAMPP en C:\.
+    Paso 6: Iniciar el proceso de instalación.
+    Paso 7: Configurar Firewall.
+        Durante el proceso de instalación es frecuente que el asistente avise del bloqueo de Firewall.
+        En la ventana de diálogo puedes marcar las casillas correspondientes para permitir la comunicación del servidor Apache en una red privada o en una red de trabajo.
+        Recuerda que no se recomienda usarlo en una red pública.
+    Paso 8: Cerrar la instalación.
+    Paso 9: Iniciar módulos.
+        En el Panel de control de XAMPP debe iniciar el servicio de Apache.
+    Paso 10: Descargar el proyecto de https://github.com/Kevin01-sys/Dynae-technical-test
+    Paso 11: Descomprimir el proyecto en la carpeta "C:\xampp\htdocs".
+    Paso 12: Abrir navegador (Chrome, Firefox, Opera, etc) y escribir localhost o http://127.0.0.1/.
+
+Pagina usada para referencia:
+Instalar XAMPP:
+https://www.ionos.es/digitalguide/servidores/herramientas/instala-tu-servidor-local-xampp-en-unos-pocos-pasos/
+https://www.youtube.com/watch?v=DOZPG4V6-JU
+Instalar de forma manual Apache, PHP y MySQL en Windows 10:
+https://www.youtube.com/watch?v=fFLTdF2CUeE
